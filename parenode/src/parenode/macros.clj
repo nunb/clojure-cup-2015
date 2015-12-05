@@ -50,20 +50,27 @@
          [:default] `(:error in ~exp)))
 
 (defn change-tpl-seq
-  [literals a_seq]
+  [ a_seq]
   ;; there must be only one ellipsis for the tpl to be good!!
   ;; if there are many of them, the will be matched against the same pattern!!
   (cond (seq? a_seq) (let [a_seq_modified (if (= '... (last a_seq)) (into '(& $$ellipsis$$)
                                                                         (pop (reverse a_seq)))
                                               a_seq)]
                        `([~@a_seq_modified] :seq))
-        (some #{a_seq} literals) (keyword a_seq) 
+
         :else a_seq))
+
+(defn scheme-literals->keywords
+  [literals a_seq]
+  (cond
+    (some #{a_seq} literals) (keyword a_seq)
+    :else a_seq))
 
 (defn scheme-tpl->cljs
   [pattern literals]
   (->> pattern
-       (clojure.walk/postwalk (partial change-tpl-seq literals))
-       ))
+       (clojure.walk/postwalk (comp (partial scheme-literals->keywords literals)
+                                    change-tpl-seq literals))))
+
 
 
