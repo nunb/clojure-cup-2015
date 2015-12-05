@@ -11,3 +11,5 @@ pom.xml
 .lein-plugins/
 .repl
 .nrepl-port
+web_repl/clojure-cup-2015/.idea/*
+web_repl/clojure-cup-2015/*.iml
