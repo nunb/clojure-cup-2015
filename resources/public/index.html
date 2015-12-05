@@ -1,15 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-  </head>
-  <body>
-    <div id="app">
-      <h2>Figwheel template</h2>
-      <p>Checkout your developer console.</p>
-    </div>
-    <script src="js/compiled/clojure_cup_2015.js" type="text/javascript"></script>
-  </body>
+<head>
+  <title>Welcome to PARENODE</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <script src="js/lib/jquery-2.1.4.min.js"></script>
+  <script src="js/lib/codemirror-compressed.js"></script>
+  <link rel="stylesheet" href="css/lib/codemirror.css">
+</head>
+<body>
+<div id="app">
+  <h2>Enter your scheme here</h2>
+  <div id="scheme-codemirror">
+
+
+  </div>
+
+  <div id="default-template" style="display: none">
+    ; See if the input starts with a given symbol.
+    (define (match-symbol input pattern)
+    (cond ((null? (remain input)) #f)
+    ((eqv? (car (remain input)) pattern) (r-cdr input))
+    (else #f)))
+
+    ; Allow the input to start with one of a list of patterns.
+    (define (match-or input pattern)
+    (cond ((null? pattern) #f)
+    ((match-pattern input (car pattern)))
+    (else (match-or input (cdr pattern)))))
+  </div>
+</div>
+<script src="js/compiled/parenode.js" type="text/javascript"></script>
+
+</body>
+<script>
+
+  $(document).ready(function () {
+    var default_schemeValue =
+            window.codemirror1 = CodeMirror($('#scheme-codemirror').get(0), {
+              value: "" + $("#default-template").text(),
+              mode:  "scheme",
+              readOnly: false,
+              styleActiveLine: true,
+              lineNumbers: true,
+            });
+
+  });
+</script>
 </html>
