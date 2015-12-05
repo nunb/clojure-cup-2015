@@ -1,5 +1,5 @@
 (ns parenode.macros
-  (:require [clojure.core.match :refer [match match]]))
+  (:require [clojure.core.match :refer [match]]))
 
 (defn scheme-body->cljs [body]
   (if (seq? body) 
