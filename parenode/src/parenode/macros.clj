@@ -31,9 +31,19 @@
          
          [(['define target a_binding] :seq)] `(def ~target (scheme->cljs ~a_binding)) 
 
+
+         [(['cond & conditions] :seq)]  (cons `cond
+                                              (mapcat
+                                                (fn [[cnd op]]
+                                                  (if (= cnd 'else)
+                                                    [:else `(scheme->cljs ~op)]
+                                                     `[(scheme->cljs ~cnd) (scheme->cljs ~op)]))
+                                                conditions))
          [(['quote an_exp] :seq)] `'~an_exp
 
          [([proc & args] :seq)] (cons `(scheme->cljs ~proc)  (scheme-body->cljs args))
+
+        
 
          [([] :seq)] nil
 
