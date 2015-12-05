@@ -11,28 +11,14 @@
 ;; define your app data so that it doesn't get over-written on reload
 (def validate-button (.getElementById js/document "validate"))
 (def parenode-api "http://localhost:3000/parenode/convert")
+(def parenode-repl-div "parenode-repl-response")
+
 (def codemirror-config {"value"           (.-innerHTML (.getElementById js/document "default-template")),
                         "mode"            "scheme",
                         "readOnly"        false,
                         "styleActiveLine" true,
                         "lineNumbers"     true,
                         })
-(defonce app-state (atom {:text "Hello world!"}))
-
-
-(defn convert-scheme [expression]
-  (let [response (http/post parenode-api
-                            {:with-credentials? false
-                             :json-params       {:expression expression}})]
-    (print response)
-    response)
-  "")
-
-(defn render-script [script, root-div]
-  let [element (d/string-to-dom (str "<script></script>"))]
-  )
-
-;(convert-scheme "(def varA \"test\"")
 
 (defn create-editor [config]
   (js/CodeMirror (.getElementById js/document "scheme-codemirror") (clj->js config)))
@@ -66,6 +52,30 @@
         ))
 
 
+(defn render-script [script, root-div]
+      (let [
+            the-script (.createElement js/document  "script")
+            the-script-value script]
+           ; if you need to load a js file
+           ;(set! (.-type the-script) "text/javascript")
+           ;(set! (.-src the-script) "url_file")
+           (print root-div)
+           (set! (.-innerHTML the-script) the-script-value)
+           (.appendChild (.getElementById  js/document root-div) the-script)))
+
+(defn convert-scheme [expression]
+      (go (let [response (<! (http/post parenode-api {:with-credentials? false}
+                                        :json-params {:expression expression}))]
+               (render-script (:script (:body response)) parenode-repl-div)
+               ; (prn (map :script (:json response)))
+               )))
+
+
+(convert-scheme "(def varA \"test\"")
+
 ;; Initialization
 (def editor (create-editor codemirror-config))
 (parenode-reload-hook)
+
+
+
