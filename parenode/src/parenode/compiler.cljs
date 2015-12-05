@@ -3,8 +3,6 @@
             [cljs.reader :as reader]))
 
 
-
-
 (defn scheme->cljs [exp]
   (match [exp]
          [(['car alist] :seq)] `(first (scheme->cljs ~alist))
@@ -14,7 +12,7 @@
                                                          (fn [statement] `(scheme->cljs ~statement))
                                                          body))
          [(['define target binding] :seq)] `(def ~target (scheme->cljs ~binding)) 
-         [(['if cond do_true do_false]) `(if (scheme->cljs @cond) (scheme->cljs ~do_true) (scheme->cljs ~do_false))]
+         [(['if cond do_true do_false] :seq)] `(if (scheme->cljs @cond) (scheme->cljs ~do_true) (scheme->cljs ~do_false))
          [([proc & args] :seq)] (cons `(scheme->cljs ~proc)  (map (fn [arg] `(scheme->cljs ~arg)) args))
          [a_symbol]  a_symbol
          [:default] :error))
