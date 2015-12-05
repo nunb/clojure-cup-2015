@@ -11,10 +11,9 @@
 </head>
 <body>
 <div id="app">
-  <h2>Enter your scheme here</h2>
+  <h1>Welcome to PARENODE</h1>
+  <h2>Enter your scheme code here</h2>
   <div id="scheme-codemirror">
-
-
   </div>
 
   <div id="default-template" style="display: none">
@@ -30,26 +29,10 @@
     ((match-pattern input (car pattern)))
     (else (match-or input (cdr pattern)))))
   </div>
-
   <div id="javascript-repl-response">
-
-
   </div>
+  <button id="validate">validate</button>
 </div>
 <script src="js/compiled/clojure_cup_2015.js" type="text/javascript"></script>
-
 </body>
-<script>
-
-  $(document).ready(function () {
-    var default_schemeValue =
-            window.codemirror1 = CodeMirror($('#scheme-codemirror').get(0), {
-              value: "" + $("#default-template").text(),
-              mode:  "scheme",
-              readOnly: false,
-              styleActiveLine: true,
-              lineNumbers: true,
-            });
-  });
-</script>
 </html>
