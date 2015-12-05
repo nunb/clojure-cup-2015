@@ -12,7 +12,6 @@
 (defmacro scheme->cljs [exp]
 
   (match [exp]
-
          [(false :<< seq?)] exp
          
          [(['car alist] :seq)] `(first (scheme->cljs ~alist))
@@ -37,11 +36,11 @@
                                                 (fn [[cnd op]]
                                                   (if (= cnd 'else)
                                                     [:else `(scheme->cljs ~op)]
-                                                     `[(scheme->cljs ~cnd) (scheme->cljs ~op)]))
+                                                    `[(scheme->cljs ~cnd) (scheme->cljs ~op)]))
                                                 conditions))
-
+         
          [(['begin & exprs] :seq)] (cons `do (scheme-body->cljs exprs))
-
+         
          [(['quote an_exp] :seq)] `'~an_exp
          
          [([proc & args] :seq)] (cons `(scheme->cljs ~proc)  (scheme-body->cljs args))
@@ -49,3 +48,19 @@
          [([] :seq)] nil
 
          [:default] `(:error in ~exp)))
+
+(defn change-tpl-seq
+  [a_seq]
+  (cond (seq? a_seq) (let [a_seq_ellipsis (if  (= '... (last a_seq))
+                                            (into '(& _)  (pop (reverse a_seq)))
+                                            a_seq
+                                            )]
+                       `([~@a_seq_ellipsis] :seq))
+         
+        :else a_seq))
+
+(defn scheme-tpl->cljs
+  [sexp]
+  
+  (clojure.walk/postwalk change-tpl-seq 
+sexp))
