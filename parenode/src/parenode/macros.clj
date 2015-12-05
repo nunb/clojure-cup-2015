@@ -24,19 +24,17 @@
 
          [(['letrec* bindings body] :seq)] `(let ~(into []
                                                     (mapcat
-                                                     (fn [[target binding]]
-                                                       '(target `(scheme->cljs ~binding))
-                                                     bindings)))
+                                                     (fn [[target a_binding]]
+                                                       [target `(scheme->cljs ~a_binding)])
+                                                     bindings))
                                               ~(scheme-body->cljs body))
          
-         [(['define target binding] :seq)] `(def ~target (scheme->cljs ~binding)) 
+         [(['define target a_binding] :seq)] `(def ~target (scheme->cljs ~a_binding)) 
 
          [(['quote an_exp] :seq)] `'~an_exp
 
          [([proc & args] :seq)] (cons `(scheme->cljs ~proc)  (scheme-body->cljs args))
 
          [([] :seq)] nil
-
-        
 
          [:default] :error))
