@@ -97,11 +97,10 @@
 
 (defn handle [msg meta pos]
   (try (let [
-            code (prep-code (clear-scheme-booleans msg) meta)
+            code (prep-code (clear-scheme-booleans msg) nil)
             forms (lined-read code)
-             ; forms (if-not pos forms (let [form (find-form forms pos)] (if (nil? form) [] [form])))
+             forms (if-not pos forms (let [form (find-form forms pos)] (if (nil? form) [] [form])))
              ]
-         (print forms )
          {:syntax "ok" :forms forms}
           )
 

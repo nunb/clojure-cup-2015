@@ -40,21 +40,22 @@
   [editor]
   (.getCursor editor))
 
+
 (defn get-expression []
-      ; (println (.-line (get-cursor editor)))
-      ;(println (.-ch (get-cursor editor)))
-      ; (println (get-selection editor))
       (let [
-            code (get-value editor)
+            selection (get-selection editor)
+            pos (if (empty? selection)
+                  {:line  (.-line (get-cursor editor)) :ch (.-ch (get-cursor editor)) }
+                  nil)
+            meta nil
+            code (if (empty? selection) (get-value editor) selection)
             ;meta {:start (.-line (get-cursor editor)) :end (.-ch (get-cursor editor))}
-            meta { :start (.-line (.getCursor editor "from"))  :end (.-line (.getCursor editor "to"))   }
-            pos {:line  (.-line (get-cursor editor)) :ch (.-ch (get-cursor editor)) }
+            ;meta { :start (.-line (.getCursor editor "from"))  :end (.-line (.getCursor editor "to"))   }
             response  (expr/handle code meta pos)
             ]
         ; (expr/handle code meta pos)
-        (= (response :syntax) "ok" (response :forms) (print (response :forms)))
-        (print meta pos )
-        (print (response :syntax))
+        ;(= (response :syntax) "ok" (response :forms) )
+        (print response)
         expressions)
   )
 
@@ -85,10 +86,7 @@
 
 
 (convert-scheme "(def varA \"test\"")
-(print (expr/handle "
-; See if the input starts with a given symbol.\n(define (match-symbol input pattern)\n  (cond ((null? (remain input)) #f)\n        ((eqv? (car (remain input)) pattern) (r-cdr input))\n        (else #f)))\n; Allow the input to start with one of a list of patterns.\n(define (match-or input pattern)\n  (cond ((null? pattern) #f)\n        ((match-pattern input (car pattern)))\n        (else (match-or input (cdr pattern)))))
 
-" {:start 0 :end 4} {:line 0 :ch 0}))
 ;; Initialization
 (def editor (create-editor codemirror-config))
 (parenode-reload-hook)
