@@ -19,7 +19,7 @@
 ;; define your app data so that it doesn't get over-written on reload
 (def validate-button (.getElementById js/document "validate"))
 (def parenode-api
-; "http://localhost:3000/parenode/convert"
+;"http://localhost:3000/parenode/convert"
   "http://clojurecup.parenode.org:9000/eval"
   )
 
@@ -47,12 +47,13 @@
     (if (= status 200)
       (let [element (.createElement js/document  "div")]
         (set! (.-className element) "alert alert-info row")
-        (set! (.-innerHTML element) (body :result) )
+        (set! (.-innerHTML element) body)
+
         (.appendChild (.getElementById  js/document root-div) element))
 
       (let [element (.createElement js/document  "div")]
-        (set! (.-className element) "alert alert-error row")
-        (set! (.-innerHTML element) (str "Error " status))
+        (set! (.-className element) "alert alert-danger row")
+        (set! (.-innerHTML element) (str "Error " status ":  " body))
         (.appendChild (.getElementById  js/document root-div) element))
 
       )
