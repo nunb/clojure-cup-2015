@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="129cf12a-03ce-49f6-9c45-1a6500fe3a38" name="Default" comment="Fixed http request">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/clojure_cup_2015/core.cljs" afterPath="$PROJECT_DIR$/src/clojure_cup_2015/core.cljs" />
+    <list default="true" id="129cf12a-03ce-49f6-9c45-1a6500fe3a38" name="Default" comment="Fixed read-string">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../rest_api/CHANGELOG.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../rest_api/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../rest_api/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../rest_api/test/rest_api/core_test.clj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../rest_api/doc/intro.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/public/index.html" afterPath="$PROJECT_DIR$/resources/public/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -26,21 +30,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="core.cljs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="core.cljs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/clojure_cup_2015/core.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4103512">
-              <caret line="79" column="73" selection-start-line="79" selection-start-column="73" selection-end-line="79" selection-end-column="73" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.637931">
-              <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.3830228">
+              <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -64,8 +68,8 @@
         <option value="$PROJECT_DIR$/src/clojure_cup_2015/expression.clj" />
         <option value="$PROJECT_DIR$/src/clojure_cup_2015/macros.clj" />
         <option value="$PROJECT_DIR$/src/clojure_cup_2015/compiler.cljs" />
-        <option value="$PROJECT_DIR$/resources/public/index.html" />
         <option value="$PROJECT_DIR$/src/clojure_cup_2015/core.cljs" />
+        <option value="$PROJECT_DIR$/resources/public/index.html" />
       </list>
     </option>
   </component>
@@ -177,6 +181,8 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
     <UpdatedFiles>
@@ -691,7 +697,7 @@
       <workItem from="1449346825148" duration="3418000" />
       <workItem from="1449350261757" duration="8796000" />
       <workItem from="1449389543981" duration="10340000" />
-      <workItem from="1449410859912" duration="6948000" />
+      <workItem from="1449410859912" duration="8236000" />
     </task>
     <task id="LOCAL-00001" summary="Extracted expressions">
       <created>1449391116043</created>
@@ -717,11 +723,17 @@
       <option name="project" value="LOCAL" />
       <updated>1449416658645</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed read-string">
+      <created>1449424393025</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1449424393025</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29502000" />
+    <option name="totallyTimeSpent" value="30790000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
@@ -772,7 +784,8 @@
     <MESSAGE value="Fixed expressions extract" />
     <MESSAGE value="Fixed http request" />
     <MESSAGE value="Sync" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sync" />
+    <MESSAGE value="Fixed read-string" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed read-string" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1025,18 +1038,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/public/index.html">
+    <entry file="file://$PROJECT_DIR$/src/clojure_cup_2015/core.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.637931">
-          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/clojure_cup_2015/core.cljs">
+    <entry file="file://$PROJECT_DIR$/resources/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4103512">
-          <caret line="79" column="73" selection-start-line="79" selection-start-column="73" selection-end-line="79" selection-end-column="73" />
+        <state vertical-scroll-proportion="0.3830228">
+          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding />
         </state>
       </provider>
