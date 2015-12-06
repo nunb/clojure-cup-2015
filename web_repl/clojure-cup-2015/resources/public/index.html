@@ -22,7 +22,6 @@
     (cond ((null? (remain input)) #f)
     ((eqv? (car (remain input)) pattern) (r-cdr input))
     (else #f)))
-
     ; Allow the input to start with one of a list of patterns.
     (define (match-or input pattern)
     (cond ((null? pattern) #f)

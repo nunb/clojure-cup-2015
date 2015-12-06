@@ -1,11 +1,6 @@
 (ns clojure-cup-2015.expression
   (:require [clojure.pprint :refer [pprint]]
-            [clojure.test :as test]
-            [clojure.string :as string]
-            [clojure.tools.nrepl.transport :as transport]
-            [clojure.tools.nrepl.middleware :refer [set-descriptor!]]
-            [clojure.tools.nrepl.middleware.interruptible-eval :refer [interruptible-eval *msg*]]
-            [clojure.tools.nrepl.misc :refer [response-for returning]]
+    [clojure.string :as string]
             [clojure.tools.reader :as reader]
             [clojure.tools.reader.reader-types :as rt])
   )

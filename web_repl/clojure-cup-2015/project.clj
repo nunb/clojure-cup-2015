@@ -8,18 +8,17 @@
 
                  ;[org.clojure/clojurescript "1.7.170"]
                  [org.clojure/clojure "1.7.0"]
-                 [org.clojure/tools.nrepl "0.2.10"]
-                 [commons-io/commons-io "2.4"]
-                 [org.clojure/tools.reader "0.9.2"]
+
+                 [org.clojure/clojurescript "1.7.170"]
+                 ;[commons-io/commons-io "2.4"]
+                 ;[org.clojure/tools.reader "0.9.2"]
                  [clj-stacktrace "0.2.8"]
 
                  ; [org.clojure/clojurescript "0.0-3308" :exclusions [org.apache.ant/ant]]
-
-                 [org.clojure/clojurescript "1.7.170"]
-
+                 [org.clojure/tools.reader "1.0.0-alpha1"]
                  [org.clojure/core.async "0.2.374"]
                  [cljs-http "0.1.38"]
-                 [clojure-complete "0.2.4"]
+                 ;[clojure-complete "0.2.4"]
 
                  ]
 

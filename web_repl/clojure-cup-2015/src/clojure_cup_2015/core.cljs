@@ -1,7 +1,8 @@
 (ns clojure-cup-2015.core
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [cljs-http.client :as http]
-            [cljs.core.async :refer [<!]])
+            [cljs.core.async :refer [<!]]
+            [clojure-cup-2015.expression :as expr])
   )
 
 
@@ -40,9 +41,21 @@
   (.getCursor editor))
 
 (defn get-expression []
-  (println (.-line (get-cursor editor)))
-  (println (.-ch (get-cursor editor)))
-  (println (get-selection editor))
+      ; (println (.-line (get-cursor editor)))
+      ;(println (.-ch (get-cursor editor)))
+      ; (println (get-selection editor))
+      (let [
+            code (get-value editor)
+            ;meta {:start (.-line (get-cursor editor)) :end (.-ch (get-cursor editor))}
+            meta { :start (.-line (.getCursor editor "from"))  :end (.-line (.getCursor editor "to"))   }
+            pos {:line  (.-line (get-cursor editor)) :ch (.-ch (get-cursor editor)) }
+            response  (expr/handle code meta pos)
+            ]
+        ; (expr/handle code meta pos)
+        (= (response :syntax) "ok" (response :forms) (print (response :forms)))
+        (print meta pos )
+        (print (response :syntax))
+        expressions)
   )
 
 (defn parenode-reload-hook []
@@ -72,7 +85,10 @@
 
 
 (convert-scheme "(def varA \"test\"")
+(print (expr/handle "
+; See if the input starts with a given symbol.\n(define (match-symbol input pattern)\n  (cond ((null? (remain input)) #f)\n        ((eqv? (car (remain input)) pattern) (r-cdr input))\n        (else #f)))\n; Allow the input to start with one of a list of patterns.\n(define (match-or input pattern)\n  (cond ((null? pattern) #f)\n        ((match-pattern input (car pattern)))\n        (else (match-or input (cdr pattern)))))
 
+" {:start 0 :end 4} {:line 0 :ch 0}))
 ;; Initialization
 (def editor (create-editor codemirror-config))
 (parenode-reload-hook)
