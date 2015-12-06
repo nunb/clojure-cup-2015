@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="129cf12a-03ce-49f6-9c45-1a6500fe3a38" name="Default" comment="Fixed read-string">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../rest_api/CHANGELOG.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../rest_api/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../rest_api/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../rest_api/test/rest_api/core_test.clj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../rest_api/doc/intro.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/public/index.html" afterPath="$PROJECT_DIR$/resources/public/index.html" />
+    <list default="true" id="129cf12a-03ce-49f6-9c45-1a6500fe3a38" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clojure-cup-2015.iml" afterPath="$PROJECT_DIR$/clojure-cup-2015.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../rest_api/src/rest_api/compiler.clj" afterPath="$PROJECT_DIR$/../../rest_api/src/rest_api/compiler.clj" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/clojure_cup_2015/core.cljs" afterPath="$PROJECT_DIR$/src/clojure_cup_2015/core.cljs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../rest_api/project.clj" afterPath="$PROJECT_DIR$/../../rest_api/project.clj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="clojure-cup-2015.iws" />
@@ -30,21 +28,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="core.cljs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="core.cljs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/clojure_cup_2015/core.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.73134327">
+              <caret line="115" column="22" selection-start-line="115" selection-start-column="22" selection-end-line="115" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/public/index.html">
+      <file leaf-file-name="macros.clj" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/core.async/0.2.374/core.async-0.2.374.jar!/cljs/core/async/macros.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3830228">
-              <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -64,12 +62,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/project.clj" />
+        <option value="$PROJECT_DIR$/resources/public/index.html" />
         <option value="$PROJECT_DIR$/src/clojure_cup_2015/expression.cljs" />
         <option value="$PROJECT_DIR$/src/clojure_cup_2015/expression.clj" />
         <option value="$PROJECT_DIR$/src/clojure_cup_2015/macros.clj" />
         <option value="$PROJECT_DIR$/src/clojure_cup_2015/compiler.cljs" />
         <option value="$PROJECT_DIR$/src/clojure_cup_2015/core.cljs" />
-        <option value="$PROJECT_DIR$/resources/public/index.html" />
       </list>
     </option>
   </component>
@@ -109,7 +107,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -166,6 +163,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
@@ -181,174 +179,6 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/clojure_cup_2015/core.cljs</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/clojure_cup_2015/macros.clj</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/res</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/public/js/res</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/*cider-repl parenode*</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/cljs/core.cljs</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/cljs/core.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/cljs/core.js.map</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/cljs/core/match.cljs</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/cljs/core/match.cljs.cache.edn</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/cljs/core/match.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/cljs/core/match.js.map</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/cljs/nodejs.cljs</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/cljs/nodejs.cljs.cache.edn</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/cljs/nodejs.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/cljs/nodejs.js.map</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/cljs/reader.cljs</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/cljs/reader.cljs.cache.edn</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/cljs/reader.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/cljs/reader.js.map</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/cljs/repl.cljs</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/cljs/repl.cljs.cache.edn</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/cljs/repl.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/cljs/repl.js.map</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/goog/array/array.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/goog/asserts/asserts.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/goog/base.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/goog/debug/error.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/goog/deps.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/goog/dom/nodetype.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/goog/object/object.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/goog/string/string.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/goog/string/stringbuffer.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/node_repl.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/node_repl_deps.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/parenode/compiler$macros.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/parenode/compiler.cljs</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/parenode/compiler.cljs.cache.edn</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/parenode/compiler.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/parenode/compiler.js.map</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/parenode/core.cljs</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/parenode/core.cljs.cache.edn</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/parenode/core.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/parenode/core.js.map</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/parenode/main.cljs</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/parenode/main.cljs.cache.edn</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/parenode/main.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.cljs_node_repl/parenode/main.js.map</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/.gitignore</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/CHANGELOG.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/LICENSE</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/README.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/doc/intro.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/project.clj</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/src/parenode/compiler.clj</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/src/parenode/main.cljs</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/../../parenode/test/parenode/core_test.clj</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Clojure REPL.Local repl">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -697,7 +527,9 @@
       <workItem from="1449346825148" duration="3418000" />
       <workItem from="1449350261757" duration="8796000" />
       <workItem from="1449389543981" duration="10340000" />
-      <workItem from="1449410859912" duration="8236000" />
+      <workItem from="1449410859912" duration="2191000" />
+      <workItem from="1449428926839" duration="627000" />
+      <workItem from="1449431243394" duration="690000" />
     </task>
     <task id="LOCAL-00001" summary="Extracted expressions">
       <created>1449391116043</created>
@@ -717,54 +549,48 @@
       <option name="project" value="LOCAL" />
       <updated>1449398032772</updated>
     </task>
-    <task id="LOCAL-00004" summary="Sync">
-      <created>1449416658645</created>
+    <task id="LOCAL-00004" summary="Fixed rest api call">
+      <created>1449427989269</created>
       <option name="number" value="00004" />
       <option name="project" value="LOCAL" />
-      <updated>1449416658645</updated>
+      <updated>1449427989269</updated>
     </task>
-    <task id="LOCAL-00005" summary="Fixed read-string">
-      <created>1449424393025</created>
-      <option name="number" value="00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1449424393025</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30790000" />
+    <option name="totallyTimeSpent" value="28861000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5091633" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.07011952" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.118827164" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.114741035" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.09876543" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33333334" sideWeight="0.49083665" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33333334" sideWeight="0.49083665" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41593626" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42746913" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -783,9 +609,8 @@
     <MESSAGE value="Extracted expressions" />
     <MESSAGE value="Fixed expressions extract" />
     <MESSAGE value="Fixed http request" />
-    <MESSAGE value="Sync" />
-    <MESSAGE value="Fixed read-string" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed read-string" />
+    <MESSAGE value="Fixed rest api call" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed rest api call" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -796,11 +621,42 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/clojure_cup_2015/core.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/core.async/0.2.374/core.async-0.2.374.jar!/cljs/core/async/macros.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clojure_cup_2015/core.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="35" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/core.async/0.2.374/core.async-0.2.374.jar!/cljs/core/async/macros.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/clojure_cup_2015/expression.cljs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -808,7 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -824,7 +679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="102" column="0" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -839,7 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -855,7 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -863,7 +715,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -871,7 +722,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -929,7 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.57224333">
           <caret line="9932" column="0" selection-start-line="9932" selection-start-column="0" selection-end-line="9932" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -954,7 +803,6 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="88.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -962,7 +810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3326613">
           <caret line="76" column="73" selection-start-line="76" selection-start-column="71" selection-end-line="76" selection-end-column="73" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -970,7 +817,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5497512">
           <caret line="52" column="47" selection-start-line="52" selection-start-column="47" selection-end-line="52" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -978,7 +824,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.1069652">
           <caret line="97" column="6" selection-start-line="97" selection-start-column="6" selection-end-line="97" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -986,7 +831,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.53731346">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,7 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2238806">
           <caret line="5" column="25" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,7 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.902965">
           <caret line="97" column="3" selection-start-line="97" selection-start-column="3" selection-end-line="97" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1018,7 +860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33153638">
           <caret line="7" column="28" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1026,7 +867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-23.433962">
           <caret line="0" column="24" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1034,15 +874,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.5895523">
           <caret line="42" column="42" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/clojure_cup_2015/core.cljs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1050,6 +881,21 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3830228">
           <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/core.async/0.2.374/core.async-0.2.374.jar!/cljs/core/async/macros.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clojure_cup_2015/core.cljs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.73134327">
+          <caret line="115" column="22" selection-start-line="115" selection-start-column="22" selection-end-line="115" selection-end-column="22" />
           <folding />
         </state>
       </provider>

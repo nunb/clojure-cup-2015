@@ -114,6 +114,3 @@
 
 ;; Initialization
 (parenode-reload-hook)
-
-
-
