@@ -3,7 +3,8 @@
   (:use compojure.core)
   (:use org.httpkit.server)
   (:require [cheshire.core :refer :all])
-  (:require [ring.middleware.json :as middleware])
+  (:require [ring.middleware.json :as middleware]
+            [ring.middleware.resource :as mid-resource])
   (:require [compojure.handler :as handler]
             [compojure.route :as route])
 
@@ -25,7 +26,9 @@
 
 
 
-(def app (->(handler/site app-routes) (middleware/wrap-json-body)))
+(def app (->(handler/site app-routes)
+            (mid-resource/wrap-resource "public")
+            (middleware/wrap-json-body)))
 
 (defn -main []
   (let [_ (.addShutdownHook (Runtime/getRuntime)
