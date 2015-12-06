@@ -13,29 +13,29 @@
   (match [exp]
          [(false :<< seq?)] exp
          
-         [(['car alist] :seq)] `(first (scheme->cljs ~alist))
+         [(['car alist] :seq)] `(first (scheme->clj ~alist))
          
-         [(['cdr alist] :seq)] `(rest (scheme->cljs  ~alist))
+         [(['cdr alist] :seq)] `(rest (scheme->clj  ~alist))
 
-         [(['cons elt alist] :seq)] `(cons (scheme->cljs ~elt) (scheme->clj ~alist))
+         [(['cons elt alist] :seq)] `(cons (scheme->clj ~elt) (scheme->clj ~alist))
          
          [(['lambda args body] :seq)] `(fn ~(into [] args) ~(scheme-body->clj body))
 
          [(['letrec* bindings body] :seq)] `(let ~(into []
                                                     (mapcat
                                                      (fn [[target a_binding]]
-                                                       [target `(scheme->cljs ~a_binding)])
+                                                       [target `(scheme->clj ~a_binding)])
                                                      bindings))
                                               ~(scheme-body->clj body))
          
-         [(['define target a_binding] :seq)] `(def ~target (scheme->cljs ~a_binding)) 
+         [(['define target a_binding] :seq)] `(def ~target (scheme->clj ~a_binding)) 
 
          [(['cond & conditions] :seq)]  (cons `cond
                                               (mapcat
                                                 (fn [[cnd op]]
                                                   (if (= cnd 'else)
-                                                    [:else `(scheme->cljs ~op)]
-                                                    `[(scheme->cljs ~cnd) (scheme->cljs ~op)]))
+                                                    [:else `(scheme->clj ~op)]
+                                                    `[(scheme->clj ~cnd) (scheme->clj ~op)]))
                                                 conditions))
 
          [(['define-syntax syntax-name (['syntax-rules literals pattern-templates] :seq)] :seq)] `(define-syntax-macro ~syntax-name
@@ -70,7 +70,7 @@
 (defn  remove-ellipsis
   [a-seq]
   (clojure.walk/postwalk #(if (and (seq? %)(= '... (last %)))
-                            (into '((eval $$ellipsis$$))
+                            (into '( $$ellipsis$$)
                                   (pop (reverse %)))
                             %)  
                             a-seq))
@@ -109,8 +109,10 @@
    pattern-templates]
   (let [input (gensym 'input)
         pattern-rows (define-syntax-matches literals  pattern-templates)]
-    `(defmacro ~macro-name
-       [~input]
-       (let [input-lit-kws# (scheme-literals->keywords ~literals ~input) ]
-         (match [input-lit-kws#]
-                ~@pattern-rows)))))
+    `(do
+       (in-ns parenode.compiler)
+       (defmacro ~macro-name
+            [& ~input]
+            (let [input-lit-kws# (scheme-literals->keywords ~literals ~input) ]
+              (match [input-lit-kws#]
+                     ~@pattern-rows))))))
