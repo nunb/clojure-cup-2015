@@ -1,15 +1,14 @@
-(ns parenode.macros
+(ns parenode.compiler
   (:require [clojure.core.match :refer [match]]))
 
-(defn scheme-body->cljs [body]
+(defn scheme-body->clj [body]
   (if (seq? body) 
     (map
-     (fn [statement] `(scheme->cljs ~statement))
+     (fn [statement] `(scheme->clj ~statement))
      body)
     body))
 
-
-(defmacro scheme->cljs [exp]
+(defmacro scheme->clj [exp]
 
   (match [exp]
          [(false :<< seq?)] exp
@@ -18,16 +17,16 @@
          
          [(['cdr alist] :seq)] `(rest (scheme->cljs  ~alist))
 
-         [(['cons elt alist] :seq)] `(cons (scheme->cljs ~elt) (scheme->cljs ~alist))
+         [(['cons elt alist] :seq)] `(cons (scheme->cljs ~elt) (scheme->clj ~alist))
          
-         [(['lambda args body] :seq)] `(fn ~(into [] args) ~(scheme-body->cljs body))
+         [(['lambda args body] :seq)] `(fn ~(into [] args) ~(scheme-body->clj body))
 
          [(['letrec* bindings body] :seq)] `(let ~(into []
                                                     (mapcat
                                                      (fn [[target a_binding]]
                                                        [target `(scheme->cljs ~a_binding)])
                                                      bindings))
-                                              ~(scheme-body->cljs body))
+                                              ~(scheme-body->clj body))
          
          [(['define target a_binding] :seq)] `(def ~target (scheme->cljs ~a_binding)) 
 
@@ -43,11 +42,11 @@
                                                                                                     ~literals
                                                                                                     ~pattern-templates) 
          
-         [(['begin & exprs] :seq)] (cons `do (scheme-body->cljs exprs))
+         [(['begin & exprs] :seq)] (cons `do (scheme-body->clj exprs))
          
          [(['quote an_exp] :seq)] `'~an_exp
          
-         [([proc & args] :seq)] (cons `(scheme->cljs ~proc)  (scheme-body->cljs args))
+         [([proc & args] :seq)] (cons `(scheme->clj ~proc)  (scheme-body->clj args))
          
          [([] :seq)] nil
 
@@ -82,7 +81,7 @@
     (some #{a_seq} literals) (keyword a_seq)
     :else  a_seq))
 
-(defn scheme-tpl->cljs
+(defn scheme-tpl->clj
   [pattern literals]
   (->> pattern
        (clojure.walk/postwalk (comp (partial scheme-literals->keywords literals)
@@ -90,7 +89,7 @@
 
 (defn define-syntax-match-row
   [literals pattern template]
-  `([~(scheme-tpl->cljs pattern literals)] (scheme->cljs  ~(remove-ellipsis template)) ))
+  `([~(scheme-tpl->clj pattern literals)] (scheme->clj  ~(remove-ellipsis template)) ))
 
 (defn define-syntax-matches
   [literals pattern-templates]
