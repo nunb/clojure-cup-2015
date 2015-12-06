@@ -1,2 +1,0 @@
-;; Analyzed by ClojureScript 1.7.170
-{:name parenode.compiler, :doc nil, :excludes #{}, :use-macros nil, :require-macros {macros parenode.macros, parenode.macros parenode.macros}, :uses nil, :requires {reader cljs.reader, cljs.reader cljs.reader}, :imports nil}
