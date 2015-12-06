@@ -112,10 +112,10 @@
         pattern-rows (define-syntax-matches literals  pattern-templates)]
     `(defn ~macro-name
       [& ~input]
-      (let [input-lit-kws# (parenode.core/scheme-literals->keywords ~literals ~input) ]
-        (cljs.core.match/match [input-lit-kws#]
+      (let [input-lit-kws# (scheme-literals->keywords ~literals ~input) ]
+        (match [input-lit-kws#]
                ~@pattern-rows)))))
 
 
-
-
+(defn eval-scheme [str-exp]
+  (eval  (cons 'scheme->clj `(~(read-string  str-exp)))))
