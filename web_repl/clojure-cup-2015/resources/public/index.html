@@ -79,12 +79,15 @@
 (define a (+ 2 3))
 
 
-(define b (lamda(x) (+ x 1)))
+(define b (lambda(x) (+ x 1)))
 
-(letrec* ((a 1)
-      (b (lamda(x) (+ x 1)))
-      (+ a (b 3))))
+(letrec*
+((a 1)
+ (b (lambda(x) (+ x 1))))
+(+ a (b 3)))
 
+  ;experimental
+  ;the resulting syntax can be called by : (add 4 'with 3)
 (define-syntax a-macro
  (syntax-rules (plus moins)
         ((a plus b) (+ a b)
