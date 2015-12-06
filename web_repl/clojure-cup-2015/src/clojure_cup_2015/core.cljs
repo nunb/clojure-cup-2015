@@ -69,7 +69,7 @@
   (print (first expression))
   ; (go (let [response (<! (http/post parenode-api {:with-credentials? false} :json-params {:expression expression}))](render-eval response parenode-repl-div)))
   (let [exp (first expression)
-        response (cmacros/scheme->clj  (cljs.reader/read-string exp))]
+        response (cmacros/scheme->clj  (cljs.reader/read-string (str exp)))]
     (render-eval response parenode-repl-div)))
 
 (defn get-expression []
