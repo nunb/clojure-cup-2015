@@ -115,3 +115,7 @@
       (let [input-lit-kws# (clojure-cup-2015.core/scheme-literals->keywords ~literals ~input) ]
         (cljs.core.match/match [input-lit-kws#]
                ~@pattern-rows)))))
+
+
+(defn eval-scheme [str-exp]
+  (eval  (cons 'scheme->clj `(~(read-string  str-exp)))))
