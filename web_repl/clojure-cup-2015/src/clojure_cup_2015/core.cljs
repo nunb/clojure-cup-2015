@@ -1,6 +1,6 @@
 (ns clojure-cup-2015.core
   (:require-macros [cljs.core.async.macros :refer [go]])
-  (:require-macros [clojure-cup-2015.macros :as cmacros]) 
+  ; (:require-macros [clojure-cup-2015.macros :as cmacros])
   (:require [cljs-http.client :as http]
             [cljs.core.match :refer-macros [match]]
             [cljs.core.async :refer [<!]]
@@ -18,10 +18,14 @@
 
 ;; define your app data so that it doesn't get over-written on reload
 (def validate-button (.getElementById js/document "validate"))
-(def parenode-api "http://localhost:3000/parenode/convert")
+(def parenode-api
+; "http://localhost:3000/parenode/convert"
+  "http://clojurecup.parenode.org:9000/eval"
+  )
+
 (def parenode-repl-div "parenode-repl-response")
 
-(def codemirror-config {"value"           (.-innerHTML (.getElementById js/document "default-template")),
+(def codemirror-config {"value"           (.-value (.getElementById js/document "default-template")),
                         "mode"            "scheme",
                         "readOnly"        false,
                         "styleActiveLine" true,
@@ -39,10 +43,21 @@
            ))
 
 (defn render-eval [response root-div]
-        (let [element (.createElement js/document  "div")]
-             (set! (.-className element) "alert alert-info row")
-          (set! (.-innerHTML element) response)
-          (.appendChild (.getElementById  js/document root-div) element)))
+  (let [status (response :status) body (response :body)]
+    (if (= status 200)
+      (let [element (.createElement js/document  "div")]
+        (set! (.-className element) "alert alert-info row")
+        (set! (.-innerHTML element) (body :result) )
+        (.appendChild (.getElementById  js/document root-div) element))
+
+      (let [element (.createElement js/document  "div")]
+        (set! (.-className element) "alert alert-error row")
+        (set! (.-innerHTML element) (str "Error " status))
+        (.appendChild (.getElementById  js/document root-div) element))
+
+      )
+
+    ))
 
 ; Content manipulation methods
 (defn get-value
@@ -67,10 +82,16 @@
 
 (defn convert-scheme [expression]
   (print (first expression))
-  ; (go (let [response (<! (http/post parenode-api {:with-credentials? false} :json-params {:expression expression}))](render-eval response parenode-repl-div)))
-  (let [exp (first expression)
-        response (cmacros/scheme->clj  (cljs.reader/read-string (str exp)))]
-    (render-eval response parenode-repl-div)))
+  (let [json-params {:exp (mapv str expression)}]
+
+    (go (let [response
+              (<! (http/post parenode-api
+                             {:with-credentials? false
+                              :json-params json-params}))]
+          (render-eval response parenode-repl-div)))
+    )
+  ;(let [exp (first expression) response (cmacros/scheme->clj  (cljs.reader/read-string (str exp)))] (render-eval response parenode-repl-div))
+  )
 
 (defn get-expression []
       (let [

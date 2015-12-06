@@ -91,8 +91,8 @@
          (a moins b) (- a b))))
 
 (cond
-                        (< 1 2) true
-                        (> 2 3) false
+                        (<  1 2) true
+                        (>  2 3) false
  else "hi!")
 
 (begin
@@ -120,7 +120,15 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="p-center">A Simple Scheme Implementation that Spits JavaScript.</p>
+                    <p>A Scheme program consists of a set of function definitions. There is no structure imposed on the program and there is no main function. Function definition may be nested. A Scheme program is executed by submitting an expression for evaluation. Functions and expressions are written in the form
+                        (function_name arguments)</p>
+                    <p>The programming language Scheme is syntactically close to the lambda calculus.</p>
+                    <p> Scheme Syntax : </p>
+                    <p> E in Expressions</p>
+                    <p> I in Identifiers (variables)</p>
+                    <p>  K in Constants
+
+                    <p>   E ::= K | I | (E_0 E^*) | (lambda (I^*) E2) | (define I E')</p>
                 </div>
             </div>
         </div>
