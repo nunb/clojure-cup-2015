@@ -23,10 +23,10 @@
          [(['lambda args body] :seq)] `(fn ~(into [] args) ~(scheme-body->clj body))
 
          [(['letrec* bindings body] :seq)] `(let ~(into []
-                                                    (mapcat
-                                                     (fn [[target a_binding]]
-                                                       [target `(scheme->clj ~a_binding)])
-                                                     bindings))
+                                                        (mapcat
+                                                         (fn [[target a_binding]]
+                                                           [target `(scheme->clj ~a_binding)])
+                                                         bindings))
                                               ~(scheme-body->clj body))
          
          [(['define target a_binding] :seq)] `(def ~target (scheme->clj ~a_binding)) 
@@ -112,10 +112,10 @@
         pattern-rows (define-syntax-matches literals  pattern-templates)]
     `(defn ~macro-name
       [& ~input]
-      (let [input-lit-kws# (scheme-literals->keywords ~literals ~input) ]
+       (let [lits# '~literals
+             input-lit-kws# `~(map (partial scheme-literals->keywords lits#) ~input) ]
         (match [input-lit-kws#]
                ~@pattern-rows)))))
-
 
 (defn eval-scheme [str-exp]
   (eval  (cons 'rest-api.compiler/scheme->clj `(~(read-string  str-exp)))))
