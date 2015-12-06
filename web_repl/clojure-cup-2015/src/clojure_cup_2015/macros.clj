@@ -112,7 +112,7 @@
         pattern-rows (define-syntax-matches literals  pattern-templates)]
     `(defn ~macro-name
       [& ~input]
-      (let [input-lit-kws# (clojure-cup-2015.compiler/scheme-literals->keywords ~literals ~input) ]
+      (let [input-lit-kws# (clojure-cup-2015.core/scheme-literals->keywords ~literals ~input) ]
         (cljs.core.match/match [input-lit-kws#]
                ~@pattern-rows)))))
 
