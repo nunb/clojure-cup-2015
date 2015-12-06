@@ -14,23 +14,25 @@
 (def port "9000")
 
 
-
 (defroutes app-routes
-           (GET "/" []
-                (str "Welcome to Parenode"))
-
            (POST "/eval"
                  {body :body} 
-                 (generate-string  {:result (let [exprs (get-in body [ :exp])]
+                    (str (let [exprs (get-in body [ :exp])]
                                               (last  (map
                                                       compiler/eval-scheme
-                                                      exprs)))})
-                
-                 ))
+                                                      exprs))))))
+
+(defn wrap-dir-index [handler]
+  (fn [req]
+    (handler
+      (update-in req [:uri]
+                 #(if (= "/" %) "/index.html" %)))))
 
 (def app (->  (handler/site  app-routes)
               (middleware/wrap-json-body {:keywords? true :bigdecimals? true})
-              (mid-resource/wrap-resource "public")))
+              (mid-resource/wrap-resource "public")
+              (wrap-dir-index)
+              ))
 
 
 (defn -main []

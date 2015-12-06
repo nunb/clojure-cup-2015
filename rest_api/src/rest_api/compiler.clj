@@ -2,7 +2,7 @@
   (:require [clojure.core.match :refer [match]]))
 
 (defn scheme-body->clj [body]
-  (if (seq? body) 
+  (if (seq? body)
     (map
      (fn [statement] `(scheme->clj ~statement))
      body)
