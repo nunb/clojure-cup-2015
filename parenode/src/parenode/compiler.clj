@@ -11,6 +11,7 @@
 (defmacro scheme->clj [exp]
 
   (match [exp]
+         
          [(false :<< seq?)] exp
          
          [(['car alist] :seq)] `(first (scheme->clj ~alist))
@@ -44,7 +45,7 @@
          
          [(['begin & exprs] :seq)] (cons `do (scheme-body->clj exprs))
          
-         [(['quote an_exp] :seq)] `'~an_exp
+         [(['quote an_exp] :seq)] `'~(scheme->clj an_exp)
          
          [([proc & args] :seq)] (cons `(scheme->clj ~proc)  (scheme-body->clj args))
          
@@ -114,3 +115,7 @@
       (let [input-lit-kws# (parenode.core/scheme-literals->keywords ~literals ~input) ]
         (cljs.core.match/match [input-lit-kws#]
                ~@pattern-rows)))))
+
+
+
+
