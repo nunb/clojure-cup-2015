@@ -17,10 +17,10 @@
 (defroutes app-routes
            (POST "/eval"
                  {body :body} 
-                 (generate-string  {:result (str (let [exprs (get-in body [ :exp])]
+                    (str (let [exprs (get-in body [ :exp])]
                                               (last  (map
                                                       compiler/eval-scheme
-                                                      exprs)))}))))
+                                                      exprs))))))
 
 (defn wrap-dir-index [handler]
   (fn [req]
