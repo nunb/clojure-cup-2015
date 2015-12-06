@@ -19,7 +19,7 @@
                  [org.clojure/core.async "0.2.374"]
                  [cljs-http "0.1.38"]
                  ;[clojure-complete "0.2.4"]
-
+                  [org.clojure/core.match "0.3.0-alpha4"]
                  ]
 
   :plugins [[lein-cljsbuild "1.1.1"]
