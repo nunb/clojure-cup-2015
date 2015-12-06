@@ -118,4 +118,4 @@
 
 
 (defn eval-scheme [str-exp]
-  (eval  (cons 'scheme->clj `(~(read-string  str-exp)))))
+  (eval  (cons 'rest-api.compiler/scheme->clj `(~(read-string  str-exp)))))

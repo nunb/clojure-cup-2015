@@ -4,9 +4,11 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.7.0"]
-                 [compojure "1.1.8"]                        ; web framework routing and ring
-                 [ring/ring-json "0.3.1"]
-                 [http-kit "2.1.18"]
+                 [compojure "1.4.0"]                        ; web framework routing and ring
+                 [javax.servlet/servlet-api "2.5"]
+                 [ring "1.4.0"]
+                 [ring/ring-json "0.4.0"]
+                 [http-kit "2.1.19"]
                  [cheshire "5.3.1"]
                  [org.clojure/core.match "0.3.0-alpha4"]]
 
