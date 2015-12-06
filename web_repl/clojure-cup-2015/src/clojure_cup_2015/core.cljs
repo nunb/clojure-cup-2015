@@ -4,7 +4,8 @@
   (:require [cljs-http.client :as http]
             [cljs.core.match :refer-macros [match]]
             [cljs.core.async :refer [<!]]
-            [clojure-cup-2015.expression :as expr]))
+            [clojure-cup-2015.expression :as expr]
+            [cljs.reader :as reader]))
 
 (defn scheme-literals->keywords
   [literals a-seq]
@@ -76,8 +77,7 @@
   (print (first expression))
   ; (go (let [response (<! (http/post parenode-api {:with-credentials? false} :json-params {:expression expression}))](render-eval response parenode-repl-div)))
   (let [exp (first expression)
-        response (cmacros/scheme->clj  exp)
-        ]
+        response (cmacros/scheme->clj  (cljs.reader/read-string exp))]
     (render-eval response parenode-repl-div)))
 
 (defn get-expression []
