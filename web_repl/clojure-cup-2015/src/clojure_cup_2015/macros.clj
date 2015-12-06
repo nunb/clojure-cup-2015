@@ -8,9 +8,6 @@
      body)
     body))
 
-
-
-
 (defmacro scheme->clj [exp]
 
   (match [exp]
@@ -119,3 +116,6 @@
         (cljs.core.match/match [input-lit-kws#]
                ~@pattern-rows)))))
 
+
+(defn eval-scheme [str-exp]
+  (eval  (cons 'scheme->clj `(~(read-string  str-exp)))))

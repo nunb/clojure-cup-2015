@@ -36,9 +36,7 @@
 (defn scroll-div-to-bottom [div-id]
       (let [element (.getElementById js/document div-id)]
            (set! (.-scrollTop element) (.-scrollHeight element))
-           )
-
-      )
+           ))
 
 (defn render-eval [response root-div]
         (let [element (.createElement js/document  "div")]
@@ -46,16 +44,10 @@
           (set! (.-innerHTML element) response)
           (.appendChild (.getElementById  js/document root-div) element)))
 
-
-
-
-
 ; Content manipulation methods
 (defn get-value
   ([editor] (.getValue editor))
-  ([editor separator] (.getValue editor separator))
-
-  )
+  ([editor separator] (.getValue editor separator)))
 
 ; Cursor and selection methods
 (defn get-selection
@@ -93,17 +85,11 @@
         (if (= (response :syntax) "ok")
           (convert-scheme (response :forms))
           (print (response :forms))
-          ))
-  )
+          )))
 
 (defn parenode-reload-hook []
   (set! (.-onclick validate-button)
-        #(get-expression)
-        ))
-
-
-
-
+        #(get-expression)))
 
 ;; Initialization
 (parenode-reload-hook)
