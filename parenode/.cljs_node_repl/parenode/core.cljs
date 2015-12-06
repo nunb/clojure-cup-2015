@@ -28,11 +28,7 @@
 
 (.post app "/eval" (.array upload) (fn [req res next]
                                      (let [req-exp   (get  (js->clj   (.. req -body)) "exp")
-                                           result (compiler/evaluate-string! "(+ 1 2)" )
-                                           _ (println (type req-exp))
-                                           _ (println (type "4"))
-                                           _ (println result)
-                                           ]
+                                           result (compiler/evaluate-string! req-exp)]
                                        (.send res (str result) ))))
 
 (defn -main [& args]

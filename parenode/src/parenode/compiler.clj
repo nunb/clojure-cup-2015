@@ -117,5 +117,5 @@
                ~@pattern-rows)))))
 
 
-
+(defmacro eval [str] (cons 'scheme->clj `()(read-string ~str)))
 
