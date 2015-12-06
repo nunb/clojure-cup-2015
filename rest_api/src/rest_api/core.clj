@@ -10,7 +10,6 @@
 
   (:gen-class))
 
-
 (def ip "0.0.0.0")
 (def port "9000")
 
@@ -19,16 +18,16 @@
                 (str "Welcome to Parenode"))
 
            (POST "/eval"
-                 [:as the-request-rest]
-                 (generate-string
-                          (compiler/scheme-body->clj (the-request-rest :body))
-                                                      )))
-
+                 [:as req]
+                 (generate-string  {:result (let [exprs (get-in req [:body :exp] )]
+                                              (last  (map
+                                                      compiler/eval-scheme
+                                                      exprs)))})))
 
 
 (def app (->(handler/site app-routes)
-            (mid-resource/wrap-resource "public")
-            (middleware/wrap-json-body)))
+        (mid-resource/wrap-resource "public")
+          (middleware/wrap-json-body)))
 
 (defn -main []
   (let [_ (.addShutdownHook (Runtime/getRuntime)
