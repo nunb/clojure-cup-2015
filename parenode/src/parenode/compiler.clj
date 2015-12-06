@@ -109,10 +109,8 @@
    pattern-templates]
   (let [input (gensym 'input)
         pattern-rows (define-syntax-matches literals  pattern-templates)]
-    `(do
-       (in-ns parenode.compiler)
-       (defmacro ~macro-name
-            [& ~input]
-            (let [input-lit-kws# (scheme-literals->keywords ~literals ~input) ]
-              (match [input-lit-kws#]
-                     ~@pattern-rows))))))
+    `(defn ~macro-name
+      [& ~input]
+      (let [input-lit-kws# (parenode.core/scheme-literals->keywords ~literals ~input) ]
+        (cljs.core.match/match [input-lit-kws#]
+               ~@pattern-rows)))))
