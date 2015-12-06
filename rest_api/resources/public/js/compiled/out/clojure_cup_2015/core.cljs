@@ -57,6 +57,7 @@
         (.appendChild (.getElementById  js/document root-div) element))
 
       )
+    (scroll-div-to-bottom root-div)
 
     ))
 

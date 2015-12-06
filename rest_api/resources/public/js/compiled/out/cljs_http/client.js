@@ -935,4 +935,4 @@ var seq15347__$1 = cljs.core.next.call(null,seq15347);
 return cljs_http.client.put.cljs$core$IFn$_invoke$arity$variadic(G__15348,seq15347__$1);
 });
 
-//# sourceMappingURL=client.js.map?rel=1449439845308
+//# sourceMappingURL=client.js.map?rel=1449440892987

@@ -32,39 +32,41 @@ clojure_cup_2015.core.render_eval = (function clojure_cup_2015$core$render_eval(
 var status = response.call(null,new cljs.core.Keyword(null,"status","status",-1997798413));
 var body = response.call(null,new cljs.core.Keyword(null,"body","body",-2049205669));
 if(cljs.core._EQ_.call(null,status,(200))){
-var element = document.createElement("div");
-element.className = "alert alert-info row";
+var element_17059 = document.createElement("div");
+element_17059.className = "alert alert-info row";
 
-element.innerHTML = body;
+element_17059.innerHTML = body;
 
-return document.getElementById(root_div).appendChild(element);
+document.getElementById(root_div).appendChild(element_17059);
 } else {
-var element = document.createElement("div");
-element.className = "alert alert-danger row";
+var element_17060 = document.createElement("div");
+element_17060.className = "alert alert-danger row";
 
-element.innerHTML = [cljs.core.str("Error "),cljs.core.str(status),cljs.core.str(":  "),cljs.core.str(body)].join('');
+element_17060.innerHTML = [cljs.core.str("Error "),cljs.core.str(status),cljs.core.str(":  "),cljs.core.str(body)].join('');
 
-return document.getElementById(root_div).appendChild(element);
+document.getElementById(root_div).appendChild(element_17060);
 }
+
+return clojure_cup_2015.core.scroll_div_to_bottom.call(null,root_div);
 });
 clojure_cup_2015.core.get_value = (function clojure_cup_2015$core$get_value(var_args){
-var args17059 = [];
-var len__5818__auto___17062 = arguments.length;
-var i__5819__auto___17063 = (0);
+var args17061 = [];
+var len__5818__auto___17064 = arguments.length;
+var i__5819__auto___17065 = (0);
 while(true){
-if((i__5819__auto___17063 < len__5818__auto___17062)){
-args17059.push((arguments[i__5819__auto___17063]));
+if((i__5819__auto___17065 < len__5818__auto___17064)){
+args17061.push((arguments[i__5819__auto___17065]));
 
-var G__17064 = (i__5819__auto___17063 + (1));
-i__5819__auto___17063 = G__17064;
+var G__17066 = (i__5819__auto___17065 + (1));
+i__5819__auto___17065 = G__17066;
 continue;
 } else {
 }
 break;
 }
 
-var G__17061 = args17059.length;
-switch (G__17061) {
+var G__17063 = args17061.length;
+switch (G__17063) {
 case 1:
 return clojure_cup_2015.core.get_value.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 
@@ -74,7 +76,7 @@ return clojure_cup_2015.core.get_value.cljs$core$IFn$_invoke$arity$2((arguments[
 
 break;
 default:
-throw (new Error([cljs.core.str("Invalid arity: "),cljs.core.str(args17059.length)].join('')));
+throw (new Error([cljs.core.str("Invalid arity: "),cljs.core.str(args17061.length)].join('')));
 
 }
 });
@@ -109,21 +111,21 @@ var c__12288__auto__ = cljs.core.async.chan.call(null,(1));
 cljs.core.async.impl.dispatch.run.call(null,((function (c__12288__auto__,json_params){
 return (function (){
 var f__12289__auto__ = (function (){var switch__12223__auto__ = ((function (c__12288__auto__,json_params){
-return (function (state_17091){
-var state_val_17092 = (state_17091[(1)]);
-if((state_val_17092 === (1))){
-var inst_17083 = [new cljs.core.Keyword(null,"with-credentials?","with-credentials?",-1773202222),new cljs.core.Keyword(null,"json-params","json-params",-1112693596)];
-var inst_17084 = [false,json_params];
-var inst_17085 = cljs.core.PersistentHashMap.fromArrays(inst_17083,inst_17084);
-var inst_17086 = cljs_http.client.post.call(null,clojure_cup_2015.core.parenode_api,inst_17085);
-var state_17091__$1 = state_17091;
-return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null,state_17091__$1,(2),inst_17086);
+return (function (state_17093){
+var state_val_17094 = (state_17093[(1)]);
+if((state_val_17094 === (1))){
+var inst_17085 = [new cljs.core.Keyword(null,"with-credentials?","with-credentials?",-1773202222),new cljs.core.Keyword(null,"json-params","json-params",-1112693596)];
+var inst_17086 = [false,json_params];
+var inst_17087 = cljs.core.PersistentHashMap.fromArrays(inst_17085,inst_17086);
+var inst_17088 = cljs_http.client.post.call(null,clojure_cup_2015.core.parenode_api,inst_17087);
+var state_17093__$1 = state_17093;
+return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null,state_17093__$1,(2),inst_17088);
 } else {
-if((state_val_17092 === (2))){
-var inst_17088 = (state_17091[(2)]);
-var inst_17089 = clojure_cup_2015.core.render_eval.call(null,inst_17088,clojure_cup_2015.core.parenode_repl_div);
-var state_17091__$1 = state_17091;
-return cljs.core.async.impl.ioc_helpers.return_chan.call(null,state_17091__$1,inst_17089);
+if((state_val_17094 === (2))){
+var inst_17090 = (state_17093[(2)]);
+var inst_17091 = clojure_cup_2015.core.render_eval.call(null,inst_17090,clojure_cup_2015.core.parenode_repl_div);
+var state_17093__$1 = state_17093;
+return cljs.core.async.impl.ioc_helpers.return_chan.call(null,state_17093__$1,inst_17091);
 } else {
 return null;
 }
@@ -134,17 +136,17 @@ return ((function (switch__12223__auto__,c__12288__auto__,json_params){
 return (function() {
 var clojure_cup_2015$core$convert_scheme_$_state_machine__12224__auto__ = null;
 var clojure_cup_2015$core$convert_scheme_$_state_machine__12224__auto____0 = (function (){
-var statearr_17096 = [null,null,null,null,null,null,null];
-(statearr_17096[(0)] = clojure_cup_2015$core$convert_scheme_$_state_machine__12224__auto__);
+var statearr_17098 = [null,null,null,null,null,null,null];
+(statearr_17098[(0)] = clojure_cup_2015$core$convert_scheme_$_state_machine__12224__auto__);
 
-(statearr_17096[(1)] = (1));
+(statearr_17098[(1)] = (1));
 
-return statearr_17096;
+return statearr_17098;
 });
-var clojure_cup_2015$core$convert_scheme_$_state_machine__12224__auto____1 = (function (state_17091){
+var clojure_cup_2015$core$convert_scheme_$_state_machine__12224__auto____1 = (function (state_17093){
 while(true){
 var ret_value__12225__auto__ = (function (){try{while(true){
-var result__12226__auto__ = switch__12223__auto__.call(null,state_17091);
+var result__12226__auto__ = switch__12223__auto__.call(null,state_17093);
 if(cljs.core.keyword_identical_QMARK_.call(null,result__12226__auto__,new cljs.core.Keyword(null,"recur","recur",-437573268))){
 continue;
 } else {
@@ -152,23 +154,23 @@ return result__12226__auto__;
 }
 break;
 }
-}catch (e17097){if((e17097 instanceof Object)){
-var ex__12227__auto__ = e17097;
-var statearr_17098_17100 = state_17091;
-(statearr_17098_17100[(5)] = ex__12227__auto__);
+}catch (e17099){if((e17099 instanceof Object)){
+var ex__12227__auto__ = e17099;
+var statearr_17100_17102 = state_17093;
+(statearr_17100_17102[(5)] = ex__12227__auto__);
 
 
-cljs.core.async.impl.ioc_helpers.process_exception.call(null,state_17091);
+cljs.core.async.impl.ioc_helpers.process_exception.call(null,state_17093);
 
 return new cljs.core.Keyword(null,"recur","recur",-437573268);
 } else {
-throw e17097;
+throw e17099;
 
 }
 }})();
 if(cljs.core.keyword_identical_QMARK_.call(null,ret_value__12225__auto__,new cljs.core.Keyword(null,"recur","recur",-437573268))){
-var G__17101 = state_17091;
-state_17091 = G__17101;
+var G__17103 = state_17093;
+state_17093 = G__17103;
 continue;
 } else {
 return ret_value__12225__auto__;
@@ -176,12 +178,12 @@ return ret_value__12225__auto__;
 break;
 }
 });
-clojure_cup_2015$core$convert_scheme_$_state_machine__12224__auto__ = function(state_17091){
+clojure_cup_2015$core$convert_scheme_$_state_machine__12224__auto__ = function(state_17093){
 switch(arguments.length){
 case 0:
 return clojure_cup_2015$core$convert_scheme_$_state_machine__12224__auto____0.call(this);
 case 1:
-return clojure_cup_2015$core$convert_scheme_$_state_machine__12224__auto____1.call(this,state_17091);
+return clojure_cup_2015$core$convert_scheme_$_state_machine__12224__auto____1.call(this,state_17093);
 }
 throw(new Error('Invalid arity: ' + arguments.length));
 };
@@ -191,10 +193,10 @@ return clojure_cup_2015$core$convert_scheme_$_state_machine__12224__auto__;
 })()
 ;})(switch__12223__auto__,c__12288__auto__,json_params))
 })();
-var state__12290__auto__ = (function (){var statearr_17099 = f__12289__auto__.call(null);
-(statearr_17099[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__12288__auto__);
+var state__12290__auto__ = (function (){var statearr_17101 = f__12289__auto__.call(null);
+(statearr_17101[cljs.core.async.impl.ioc_helpers.USER_START_IDX] = c__12288__auto__);
 
-return statearr_17099;
+return statearr_17101;
 })();
 return cljs.core.async.impl.ioc_helpers.run_state_machine_wrapped.call(null,state__12290__auto__);
 });})(c__12288__auto__,json_params))
@@ -221,4 +223,4 @@ return clojure_cup_2015.core.get_expression.call(null);
 });
 clojure_cup_2015.core.parenode_reload_hook.call(null);
 
-//# sourceMappingURL=core.js.map?rel=1449439848259
+//# sourceMappingURL=core.js.map?rel=1449440895975
