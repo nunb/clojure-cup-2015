@@ -1,12 +1,10 @@
 (ns clojure-cup-2015.core
   (:require-macros [cljs.core.async.macros :refer [go]])
-    (:require-macros [clojure-cup-2015.macros :as cmacros]) 
+  (:require-macros [clojure-cup-2015.macros :as cmacros]) 
   (:require [cljs-http.client :as http]
             [cljs.core.match :refer-macros [match]]
             [cljs.core.async :refer [<!]]
-            [clojure-cup-2015.expression :as expr]
-            )
-  )
+            [clojure-cup-2015.expression :as expr]))
 
 (defn scheme-literals->keywords
   [literals a-seq]
