@@ -21,7 +21,7 @@
 (def parenode-api "http://localhost:3000/parenode/convert")
 (def parenode-repl-div "parenode-repl-response")
 
-(def codemirror-config {"value"           (.-innerHTML (.getElementById js/document "default-template")),
+(def codemirror-config {"value"           (.-value (.getElementById js/document "default-template")),
                         "mode"            "scheme",
                         "readOnly"        false,
                         "styleActiveLine" true,
