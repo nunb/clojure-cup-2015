@@ -8,6 +8,11 @@
             )
   )
 
+(defn scheme-literals->keywords
+  [literals a-seq]
+  (cond
+    (some #{a-seq} literals) (keyword a-seq)
+    :else  a-seq))
 
 (enable-console-print!)
 (.log js/console "============ WELCOME TO PARENODE CONSOLE =====================")
