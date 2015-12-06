@@ -87,11 +87,9 @@
 (+ a (b 3)))
 
   ;experimental
+(define-syntax add (syntax-rules (with) ((add a with b) (+ a b))))
   ;the resulting syntax can be called by : (add 4 'with 3)
-(define-syntax a-macro
- (syntax-rules (plus moins)
-        ((a plus b) (+ a b)
-         (a moins b) (- a b))))
+
 
 (cond
                         (<  1 2) true
