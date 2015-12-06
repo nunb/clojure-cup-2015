@@ -24,6 +24,41 @@
 (defn create-editor [config]
   (js/CodeMirror (.getElementById js/document "scheme-codemirror") (clj->js config)))
 
+
+(defn render-eval [response root-div]
+    (let [status (response :status 500)
+          body (response :body)]
+      (if (= status 200)
+        (let [element (.createElement js/document  "span")]
+          (set! (.-innerHTML element) (body :eval))
+          (.appendChild (.getElementById  js/document root-div) element))
+        (let [element (.createElement js/document  "span")]
+          (set! (.-innerHTML  element) (str "Error " status ": " (body :error)))
+          (.appendChild (.getElementById  js/document root-div) element)))))
+
+(defn render-script [script, root-div]
+  (let [
+        the-script (.createElement js/document  "script")
+        the-script-value script]
+    ; if you need to load a js file
+    ;(set! (.-type the-script) "text/javascript")
+    ;(set! (.-src the-script) "url_file")
+    (print root-div)
+    (set! (.-innerHTML the-script) the-script-value)
+    (.appendChild (.getElementById  js/document root-div) the-script)))
+
+(defn convert-scheme [expressions]
+  (print (type expressions))
+  (let [json-params {:expressions (mapv str expressions)}]
+    (print "json-params  " json-params)
+    (go (let [response (<! (http/post parenode-api {:with-credentials? false
+                                      :json-params json-params}))]
+          (render-script (:script (:body response)) parenode-repl-div)
+
+          (render-eval response parenode-repl-div)
+          ))))
+
+
 ; Content manipulation methods
 (defn get-value
   ([editor] (.getValue editor))
@@ -54,9 +89,10 @@
             response  (expr/handle code meta pos)
             ]
         ; (expr/handle code meta pos)
-        ;(= (response :syntax) "ok" (response :forms) )
-        (print response)
-        expressions)
+        (if (= (response :syntax) "ok")
+          (convert-scheme (response :forms))
+          (print (response :forms))
+          ))
   )
 
 (defn parenode-reload-hook []
@@ -64,26 +100,6 @@
         ;#(println (.-line(get-cursor editor)))
         #(get-expression)
         ))
-
-
-(defn render-script [script, root-div]
-      (let [
-            the-script (.createElement js/document  "script")
-            the-script-value script]
-           ; if you need to load a js file
-           ;(set! (.-type the-script) "text/javascript")
-           ;(set! (.-src the-script) "url_file")
-           (print root-div)
-           (set! (.-innerHTML the-script) the-script-value)
-           (.appendChild (.getElementById  js/document root-div) the-script)))
-
-(defn convert-scheme [expression]
-      (go (let [response (<! (http/post parenode-api {:with-credentials? false}
-                                        :json-params {:expression expression}))]
-               (render-script (:script (:body response)) parenode-repl-div)
-               ; (prn (map :script (:json response)))
-               )))
-
 
 (convert-scheme "(def varA \"test\"")
 

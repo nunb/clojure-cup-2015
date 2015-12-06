@@ -2,8 +2,7 @@
   (:require [clojure.pprint :refer [pprint]]
     [clojure.string :as string]
             [clojure.tools.reader :as reader]
-            [clojure.tools.reader.reader-types :as rt])
-  )
+            [clojure.tools.reader.reader-types :as rt]))
 
 
 

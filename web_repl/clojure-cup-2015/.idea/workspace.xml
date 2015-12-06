@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="129cf12a-03ce-49f6-9c45-1a6500fe3a38" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clojure-cup-2015.iml" afterPath="$PROJECT_DIR$/clojure-cup-2015.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/clojure_cup_2015/core.cljs" afterPath="$PROJECT_DIR$/src/clojure_cup_2015/core.cljs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/clojure_cup_2015/expression.clj" afterPath="$PROJECT_DIR$/src/clojure_cup_2015/expression.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/clojure_cup_2015/expression.cljs" afterPath="$PROJECT_DIR$/src/clojure_cup_2015/expression.cljs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="clojure-cup-2015.iws" />
@@ -28,41 +26,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="expression.cljs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="expression.cljs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/clojure_cup_2015/expression.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38064516">
-              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="expression.clj" pinned="false" current-in-tab="false">
+      <file leaf-file-name="expression.clj" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/clojure_cup_2015/expression.clj">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.903226">
-              <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reader_types.clj" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/clojure/tools.reader/1.0.0-alpha1/tools.reader-1.0.0-alpha1.jar!/clojure/tools/reader/reader_types.clj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="344" column="6" selection-start-line="344" selection-start-column="6" selection-end-line="344" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="project.clj" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/project.clj">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.17142858">
+              <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -71,8 +49,8 @@
       <file leaf-file-name="core.cljs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/clojure_cup_2015/core.cljs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.870968">
-              <caret line="53" column="31" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
+            <state vertical-scroll-proportion="-4.580645">
+              <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -93,9 +71,9 @@
       <list>
         <option value="$PROJECT_DIR$/project.clj" />
         <option value="$PROJECT_DIR$/resources/public/index.html" />
-        <option value="$PROJECT_DIR$/src/clojure_cup_2015/expression.clj" />
         <option value="$PROJECT_DIR$/src/clojure_cup_2015/expression.cljs" />
         <option value="$PROJECT_DIR$/src/clojure_cup_2015/core.cljs" />
+        <option value="$PROJECT_DIR$/src/clojure_cup_2015/expression.clj" />
       </list>
     </option>
   </component>
@@ -598,7 +576,7 @@
       <updated>1449346822806</updated>
       <workItem from="1449346825148" duration="3418000" />
       <workItem from="1449350261757" duration="8796000" />
-      <workItem from="1449389543981" duration="5108000" />
+      <workItem from="1449389543981" duration="8250000" />
     </task>
     <task id="LOCAL-00001" summary="Extracted expressions">
       <created>1449391116043</created>
@@ -606,11 +584,17 @@
       <option name="project" value="LOCAL" />
       <updated>1449391116043</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed expressions extract">
+      <created>1449394888237</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1449394888237</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17322000" />
+    <option name="totallyTimeSpent" value="20464000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
@@ -624,11 +608,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5091633" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33625498" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="REPL" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2812749" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Leiningen" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47530866" sideWeight="0.49083665" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25771606" sideWeight="0.49083665" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18007968" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -658,7 +642,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Extracted expressions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Extracted expressions" />
+    <MESSAGE value="Fixed expressions extract" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed expressions extract" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -807,8 +792,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="36" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+        <state vertical-scroll-proportion="-0.89032257">
+          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -821,26 +806,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/clojure_cup_2015/expression.clj">
+    <entry file="file://$PROJECT_DIR$/src/clojure_cup_2015/expression.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.903226">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/clojure_cup_2015/core.cljs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.870968">
-          <caret line="53" column="31" selection-start-line="53" selection-start-column="31" selection-end-line="53" selection-end-column="31" />
+        <state vertical-scroll-proportion="-4.580645">
+          <caret line="35" column="50" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/clojure_cup_2015/expression.cljs">
+    <entry file="file://$PROJECT_DIR$/src/clojure_cup_2015/expression.clj">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38064516">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.17142858">
+          <caret line="37" column="20" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
           <folding />
         </state>
       </provider>
