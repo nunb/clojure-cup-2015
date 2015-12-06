@@ -1,2 +1,6 @@
 /* some style */
 
+.CodeMirror {
+    border: 3px solid #eee;
+    height: 435px;
+}

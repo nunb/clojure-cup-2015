@@ -1,39 +1,141 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Welcome to PARENODE</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/style.css" rel="stylesheet" type="text/css">
-  <script src="js/lib/jquery-2.1.4.min.js"></script>
-  <script src="js/lib/codemirror-compressed.js"></script>
-  <link rel="stylesheet" href="css/lib/codemirror.css">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>PARENODE - A Simple Scheme Implementation that Spits JavaScript.</title>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- CodeMirror core CSS -->
+    <link rel="stylesheet" href="css/lib/codemirror.css">
+
+    <!-- Custom CSS -->
+    <link href="css/freelancer.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
 </head>
-<body>
-<div id="app">
-  <h1>Welcome to PARENODE</h1>
-  <h2>Enter your scheme code here</h2>
-  <div id="scheme-codemirror">
-  </div>
+<body id="page-top" class="index">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default ">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <a class="navbar-brand" href="/">PARENODE</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a target="_blank" href="https://github.com/parenode/clojure-cup-2015">GITHUB</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#about">About</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-responsive tn-small" src="img/paranode-logo.png" alt="">
+                    <div class="intro-text">
+                        <span class="name">WELCOME TO PARENODE</span>
+                        <hr class="star-light">
+                        <span class="skills">The TNTEAM entry for Clojure Cup 2015</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-  <div id="default-template" style="display: none">
-    ; See if the input starts with a given symbol.
-    (define (match-symbol input pattern)
-    (cond ((null? (remain input)) #f)
-    ((eqv? (car (remain input)) pattern) (r-cdr input))
-    (else #f)))
-    ; Allow the input to start with one of a list of patterns.
-    (define (match-or input pattern)
-    (cond ((null? pattern) #f)
-    ((match-pattern input (car pattern)))
-    (else (match-or input (cdr pattern)))))
-  </div>
-  <div id="javascript-repl-response">
-  </div>
-  <button id="validate">validate</button>
-
-  <div id="parenode-repl-response"></div>
-</div>
-<script src="js/compiled/clojure_cup_2015.js" type="text/javascript"></script>
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 portfolio-item">
+                    <h3><i class="fa fa-pencil-square-o"></i> Enter your scheme code</h3>
+                    <div id="scheme-codemirror">
+                    </div>
+                    <textarea id="default-template" style="display: none">
+; See if the input starts with a given symbol.
+(define (match-symbol input pattern)
+  (cond ((null? (remain input)) #f)
+        ((eqv? (car (remain input)) pattern) (r-cdr input))
+        (else #f)))
+; Allow the input to start with one of a list of patterns.
+(define (match-or input pattern)
+  (cond ((null? pattern) #f)
+        ((match-pattern input (car pattern)))
+        (else (match-or input (cdr pattern)))))
+                    </textarea>
+                    <p>
+                        <button id="validate" type="button" class="btn btn-primary btn-lg btn-block"><i class="fa fa-code"></i> Compile</button>
+                    </p>
+                </div>
+                <div class="col-sm-4 portfolio-item " >
+                    <h3><i class="fa fa-external-link"></i> Evaluations</h3>
+                    <div id="parenode-repl-response" class="jumbotron" style="height:500px;overflow-y: scroll;" ></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>About</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="p-center">A Simple Scheme Implementation that Spits JavaScript.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                       <img style="width: 20%;" src="img/TNTEAM.png">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        PARENODE  created by  TNTEAM
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="js/lib/jquery-2.1.4.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/lib/codemirror-compressed.js"></script>
+    <script src="js/compiled/clojure_cup_2015.js" type="text/javascript"></script>
 </body>
 </html>

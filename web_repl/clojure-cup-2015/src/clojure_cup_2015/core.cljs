@@ -25,16 +25,26 @@
   (js/CodeMirror (.getElementById js/document "scheme-codemirror") (clj->js config)))
 
 
+(defn scroll-div-to-bottom [div-id]
+      (let [element (.getElementById js/document div-id)]
+           (set! (.-scrollTop element) (.-scrollHeight element))
+           )
+
+      )
+
 (defn render-eval [response root-div]
     (let [status (response :status 500)
           body (response :body)]
       (if (= status 200)
-        (let [element (.createElement js/document  "span")]
+        (let [element (.createElement js/document  "div")]
+             (set! (.-className element) "alert alert-info row")
           (set! (.-innerHTML element) (body :eval))
           (.appendChild (.getElementById  js/document root-div) element))
-        (let [element (.createElement js/document  "span")]
+        (let [element (.createElement js/document  "div")]
+             (set! (.-className element) "alert alert-danger row")
           (set! (.-innerHTML  element) (str "Error " status ": " (body :error)))
-          (.appendChild (.getElementById  js/document root-div) element)))))
+          (.appendChild (.getElementById  js/document root-div) element)))
+          (scroll-div-to-bottom root-div)))
 
 (defn render-script [script, root-div]
   (let [
@@ -101,7 +111,26 @@
         #(get-expression)
         ))
 
-(convert-scheme "(def varA \"test\"")
+
+(defn render-script [script, root-div]
+      (let [
+            the-script (.createElement js/document  "script")
+            the-script-value script]
+           ; if you need to load a js file
+           ;(set! (.-type the-script) "text/javascript")
+           ;(set! (.-src the-script) "url_file")
+           (print root-div)
+           (set! (.-innerHTML the-script) the-script-value)
+           (.appendChild (.getElementById  js/document root-div) the-script)))
+
+(defn convert-scheme [expression]
+      (go (let [response (<! (http/post parenode-api {:with-credentials? false}
+                                        :json-params {:expression expression}))]
+               ; (render-script (:script (:body response)) parenode-repl-div)
+               (render-eval response parenode-repl-div)
+               ; (prn (map :script (:json response)))
+               )))
+
 
 ;; Initialization
 (def editor (create-editor codemirror-config))
