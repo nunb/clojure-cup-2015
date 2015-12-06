@@ -76,16 +76,15 @@
                     <div id="scheme-codemirror">
                     </div>
                     <textarea id="default-template" style="display: none">
-; See if the input starts with a given symbol.
-(define (match-symbol input pattern)
-  (cond ((null? (remain input)) #f)
-        ((eqv? (car (remain input)) pattern) (r-cdr input))
-        (else #f)))
-; Allow the input to start with one of a list of patterns.
-(define (match-or input pattern)
-  (cond ((null? pattern) #f)
-        ((match-pattern input (car pattern)))
-        (else (match-or input (cdr pattern)))))
+(define a (+ 2 3))
+(define b (lamda(x) (+ x 1)))
+(letrec* ((a 1) (b (lamda(x) (+ x 1)) ) (+ a (b 3))))
+
+(car '(2 3 4))
+
+(cdr '(3 2 4))
+
+(cons 2 '(4 3))
                     </textarea>
                     <p>
                         <button id="validate" type="button" class="btn btn-primary btn-lg btn-block"><i class="fa fa-code"></i> Compile</button>
